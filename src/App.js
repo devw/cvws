@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import marked from "marked";
+import parse from "html-react-parser";
 
 function App() {
     return (
@@ -20,7 +21,9 @@ function App() {
                     <img src="https://picsum.photos/200/200" alt="" />
                 </div>
                 <div id="text">
-                    {marked("# Marked in browser\n\nRendered by **marked**.")}
+                    {parse(
+                        marked("# Marked in browser\n\nRendered by **marked**.")
+                    )}
                 </div>
             </div>
         </div>
