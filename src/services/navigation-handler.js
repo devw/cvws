@@ -3,11 +3,12 @@ const get_url = (par) =>
     par +
     ".txt";
 
-const modifyText = (e) => {
-    document.querySelector("#heder").innerHTML = e.target.innerHTML;
-    fetch(get_url(e.target.id), { cache: "reload" })
-        .then((x) => x.text())
-        .then((y) => {
-            document.querySelector("#main").innerHTML = nl2br(y);
+export const changeArticle = function (title) {
+    const fn = title.toLocaleLowerCase().replace(/ /g, "-") + ".md";
+    fetch(fn, { cache: "reload" })
+        .then((md) => md.text())
+        .then((resp) => {
+            this.setState({ article: resp });
+            this.setState({ title: title });
         });
 };

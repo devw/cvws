@@ -7,15 +7,11 @@ export const Article = (props) => {
     const links = ["About me", "Publications"];
     return (
         <div className={classes.article}>
-            <h2>About me</h2>
+            <h2>{props.article.title}</h2>
             <div id="banner">
                 <img src="https://picsum.photos/200/200" alt="" />
             </div>
-            <div id="text">
-                {parse(
-                    marked("# Marked in browser\n\nRendered by **marked**.")
-                )}
-            </div>
+            <div id="text">{parse(marked(props.article.article))}</div>
         </div>
     );
 };
