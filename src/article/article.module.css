@@ -1,0 +1,9 @@
+.article {
+    /* display: grid;
+    grid-template-columns: 220px auto; */
+}
+
+.article div {
+    float: left;
+    margin-right: 20px;
+}

@@ -1,31 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
-import marked from "marked";
-import parse from "html-react-parser";
+import { Navbar } from "./navbar/navbar";
+import { Article } from "./article/article";
+import { changeArticle } from "./services/navigation-handler";
 
-function App() {
-    return (
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { article: "" };
+        this.changeArticle = changeArticle.bind(this);
+        this.changeArticle("About me");
+    }
+    render = () => (
         <div className="App">
             <h1>Antonio Pierro</h1>
-            <ul id="nav">
-                <li>
-                    <a href="#">About me</a>
-                </li>
-                <li>
-                    <a href="#">Publications</a>
-                </li>
-            </ul>
-            <h2>About me</h2>
-            <div id="content">
-                <div id="banner">
-                    <img src="https://picsum.photos/200/200" alt="" />
-                </div>
-                <div id="text">
-                    {parse(
-                        marked("# Marked in browser\n\nRendered by **marked**.")
-                    )}
-                </div>
-            </div>
+            <Navbar onClick={this.changeArticle}></Navbar>
+            <Article article={this.state}></Article>
         </div>
     );
 }
