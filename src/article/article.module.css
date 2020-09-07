@@ -1,9 +1,9 @@
 .article div {
     display: grid;
-    grid-template-columns: 250px auto;
+    grid-template-columns: auto auto;
 }
-.article p {
-    margin: 0;
+.article img {
+    margin: 20px 20px 20px 0;
 }
 
 @media (max-width: 600px) {
