@@ -1,14 +1,8 @@
-const get_url = (par) =>
-    "https://raw.githubusercontent.com/francescaervas/francescaervas.github.io/master/data/" +
-    par +
-    ".txt";
+const fn = (name) => `${name.toLocaleLowerCase().replace(/ /g, "-")}.md`;
 
-export const changeArticle = function (title) {
-    const fn = title.toLocaleLowerCase().replace(/ /g, "-") + ".md";
-    fetch(fn, { cache: "reload" })
-        .then((md) => md.text())
-        .then((resp) => {
-            this.setState({ article: resp });
-            this.setState({ title: title });
-        });
+const loadArticle = (name) => fetch(fn(name)).then((md) => md.text());
+
+export const setArticle = async function (name) {
+    let story = await loadArticle(name);
+    this.setState({ story: story, name: name });
 };
