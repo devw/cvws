@@ -1,4 +1,18 @@
 .article div {
-    float: left;
-    margin-right: 20px;
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) auto;
+}
+.article img {
+    margin: 20px 0 20px 0;
+    max-width: 220px;
+}
+
+.article span {
+    text-align: justify;
+}
+
+@media (max-width: 600px) {
+    .article div {
+        grid-template-columns: auto;
+    }
 }

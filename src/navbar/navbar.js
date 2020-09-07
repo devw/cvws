@@ -2,7 +2,16 @@ import React from "react";
 import classes from "./navbar.module.css";
 
 export const Navbar = (props) => {
-    const links = ["About me", "Publications"];
+    const links = [
+        "About me",
+        "Research",
+        "Publications",
+        "Conferences-Talks",
+        "Teaching",
+        "Editorial Boards",
+        "Outreach",
+        "Contacts",
+    ];
     const handleClick = function (e) {
         e.stopPropagation();
         props.onClick(e.target.innerHTML);
