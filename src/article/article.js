@@ -6,9 +6,9 @@ import parse from "html-react-parser";
 export const Article = ({ name, story }) => (
     <div className={classes.article}>
         <h2>{name}</h2>
-        <div id="banner">
+        <div>
             <img src="https://picsum.photos/200/200" alt="" />
+            <span>{parse(marked(story || ""))}</span>
         </div>
-        <div id="text">{parse(marked(story || ""))}</div>
     </div>
 );
