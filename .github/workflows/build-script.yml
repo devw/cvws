@@ -8,7 +8,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x, 13.x]
+                node-version: [13.x]
 
         steps:
             - uses: actions/checkout@v2
@@ -20,3 +20,11 @@ jobs:
             - run: yarn build
               env:
                   CI: true
+            - uses: actions/git-auto-commit-action@v4
+              with:
+                  commit_message: building doc directory
+                  # Optional branch to push to, defaults to the current branch
+                  # branch: master
+
+                  # Optional glob pattern of files which should be added to the commit
+                  file_pattern: docs/*
