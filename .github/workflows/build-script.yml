@@ -1,0 +1,15 @@
+on:
+    push:
+        branches: [master]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Build Code
+              run: |
+                  echo Building code,
+                  rm -rf docs,
+                  react-scripts build,
+                  mv build docs
