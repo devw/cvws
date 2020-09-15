@@ -29,7 +29,7 @@ jobs:
               with:
                   commit_message: building doc directory
                   # Optional branch to push to, defaults to the current branch
-                  branch: docs
+                  #   branch: docs
 
                   # Optional glob pattern of files which should be added to the commit
                   file_pattern: docs/*
