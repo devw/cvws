@@ -14,7 +14,7 @@ export default class App extends Component {
 
     render = () => (
         <div className="App">
-            <h1>Francesca Ervas</h1>
+            <h1>Antonio Pierro</h1>
             <Navbar onClick={this.setArticle}></Navbar>
             <Article {...this.state}></Article>
         </div>

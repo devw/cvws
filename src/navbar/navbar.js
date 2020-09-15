@@ -19,10 +19,8 @@ export const Navbar = (props) => {
     return (
         <ul className={classes.navbar}>
             {links.map((e, i) => (
-                <li key={i}>
-                    <a href="#" onClick={handleClick}>
-                        {e}
-                    </a>
+                <li key={i} onClick={handleClick}>
+                    <a href="#">{e}</a>
                 </li>
             ))}
         </ul>
