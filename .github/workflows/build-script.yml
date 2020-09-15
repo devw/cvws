@@ -1,0 +1,35 @@
+name: Node.js CI
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: macos-latest
+
+        strategy:
+            matrix:
+                node-version: [13.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: yarn install
+            - run: yarn build
+              env:
+                  CI: true
+            - uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: building doc directory
+                  # Optional branch to push to, defaults to the current branch
+                  branch: docs
+
+                  # Optional glob pattern of files which should be added to the commit
+                  file_pattern: docs/*

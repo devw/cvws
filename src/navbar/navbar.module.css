@@ -6,14 +6,9 @@
 }
 
 .navbar li {
-    display: inline;
-    padding-right: 20px;
-}
-.navbar a {
-    text-transform: uppercase;
-    text-decoration: none;
     color: #6a6a6a;
-}
-.navbar a:hover {
-    text-decoration: underline;
+    cursor: pointer;
+    display: inline;
+    text-transform: uppercase;
+    padding-right: 20px;
 }
