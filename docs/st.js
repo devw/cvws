@@ -20,8 +20,8 @@ const addJS = (url) => {
     HEAD.appendChild(script);
 };
 
-addJS(`${ENDPOINT}/bundle.js?t=03`);
-addCSS(`${ENDPOINT}/main.css?v=04`);
+addJS(`${ENDPOINT}/bundle.js?t=04`);
+addCSS(`${ENDPOINT}/main.css?v=05`);
 addCSS(
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 );
