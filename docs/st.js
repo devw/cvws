@@ -1,6 +1,6 @@
-document.body
-    .querySelector('[href="/account/login"]')
-    ?.addEventListener("click", (e) => e.preventDefault());
+window.onClick_loginPopup = (e) => e.preventDefault();
+const el = document.body.querySelector('[href="/account/login"]');
+el?.addEventListener("click", window.onClick_loginPopup, true);
 
 const HEAD = document.getElementsByTagName("head")[0];
 
